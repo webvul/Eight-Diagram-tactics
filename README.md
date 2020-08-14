@@ -13,9 +13,3 @@ pip3 install pick
 pip install pocsuite
 ```
 
-- 使用
-
-```bash
-python3 EDT.py
-```
-
