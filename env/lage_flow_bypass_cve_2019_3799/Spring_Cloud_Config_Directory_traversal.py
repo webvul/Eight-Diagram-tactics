@@ -2,7 +2,6 @@
 # coding: utf-8
 from pocsuite.api.poc import register
 from pocsuite.api.poc import Output, POCBase
-import requests
 import urllib
 import socket
 import time
