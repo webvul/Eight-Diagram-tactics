@@ -28,5 +28,6 @@ sock.send(str_five.encode('ascii'))
 chunk = sock.recv(4096)
 sock.close()
 result = str(chunk,encoding='utf-8')
+print(result)
 if  "bin" in result and "/usr/sbin" in result and "root" in result:
     print("VerifyInfo : success")
