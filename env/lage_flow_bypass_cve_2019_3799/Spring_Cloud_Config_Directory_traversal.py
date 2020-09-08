@@ -63,8 +63,8 @@ class TestPOC(POCBase):
         chunk = sock.recv(4096)
         sock.close()
         if  "bin" in chunk and "/usr/sbin" in chunk and "root" in chunk:
-            result['VerifyInfo'] = {}
-            result['VerifyInfo']['URL'] = self.url
+            print(chunk)
+            result['VerifyInfo'] = "success"
         pass
         return self.parse_output(result)
 

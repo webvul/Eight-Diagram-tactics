@@ -48,9 +48,6 @@ class TestPOC(POCBase):
         ]
         if any(verify_str in vul_check(x) for x in payload_list):
             result['VerifyInfo'] = "success"
-            # result['VerifyInfo'] = {}
-            # result['VerifyInfo']['URL'] = self.url
-            # result['VerifyInfo']['RESULT'] = "success"
         return self.parse_output(result)
 
     _attack = _verify
