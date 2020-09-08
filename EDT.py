@@ -34,12 +34,13 @@ def poc_run(poc_config, path, file_names,port_option):
         poc_file = file_names[[i for i,x in enumerate(file_names) if x.find('py')!=-1][0]]
         command = "pocsuite -r {} -u {}:{}".format(os.path.join(path,poc_file),vul_add,vul_port)
         poc_result = os.popen(command).read()
-        if "VerifyInfo : success" in poc_result:
-            print("\033[1;31m 攻击成功，防御措施必没生效 \033[0m!")
-        else:
-            print("\033[1;32m 攻击失败，防御设施可能生效 \033[0m!")
     elif poc_config[0][1] == "False":
-        print(poc_config[1][1])
+        command = poc_config[1][1]
+        poc_result = os.popen(command).read()
+    if "VerifyInfo : success" in poc_result:
+        print("\033[1;31m 攻击成功，防御措施必没生效 \033[0m!")
+    else:
+        print("\033[1;32m 攻击失败，防御设施可能生效 \033[0m!")
 
 
 def vul_env_run(vul_env_config, path, file_names,port_option):
